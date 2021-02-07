@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  redis:
+    image: redis:latest
+    restart: always
+
+  fatorial:
+    depends_on:
+      - redis
+    image: fatorial:1.0
+    ports:
+      - "3000:3000"
+    restart: always
